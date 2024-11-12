@@ -34,7 +34,7 @@ Press `R` to toggle/un-toggle airplane rainbow color effect.
 
 
 ## Technical Details
-- [Vertex shaders](./src/shader/vertexShader.vert) and [Fragment shaders](./src/shader/fragmentShader.frag) for rendering
+- [Vertex shaders](./src/shaders/vertexShader.vert) and [Fragment shaders](./src/shaders/fragmentShader.frag) for rendering
 - Texture mapping for earth and airplane
 - Matrix transformations for object positioning and rotation
 - Custom effects including squeeze and rainbow color transitions using vertex and fragment shaders
