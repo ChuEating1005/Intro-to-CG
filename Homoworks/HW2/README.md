@@ -12,28 +12,28 @@ A 3D graphics program demonstrating various visual effects using OpenGL. The pro
 
 ### Airplane 
 #### Normal
-![Normal](https://imgur.com/96vjyy4.gif) 
+[Imgur](https://imgur.com/96vjyy4)
 
 Default view showing the earth and orbiting airplane.
 
 #### Rotate Axis 
-![Rotate axis](https://imgur.com/549tBdM.gif) 
+[Imgur](https://imgur.com/549tBdM)
 
 Use `A`/`D` keys to adjust the airplane's orbit orientation.
 
 #### Helicopter Mode
-![Helicopter mode](https://imgur.com/qbIHqv1.gif) 
+[Imgur](https://imgur.com/qbIHqv1)
 
 Press `H` to activate/deactivate helicopter transformation.
 
 ### Earth
 #### Squeeze 
-![Squeeze mode](https://imgur.com/Ix7k75q.gif)
+[Imgur](https://imgur.com/Ix7k75q)
 
 Press `S` to toggle/un-toggle earth squeeze effect.
 
 #### Rainbow 
-![Rainbow mode](https://imgur.com/bxgbaSb.gif)
+[Imgur](https://imgur.com/bxgbaSb)
 
 Press `R` to toggle/un-toggle airplane rainbow color effect.
 
