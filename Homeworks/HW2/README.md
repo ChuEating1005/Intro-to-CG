@@ -18,6 +18,10 @@ Default view showing the earth and orbiting airplane.
 ![](https://github.com/ChuEating1005/Intro-to-CG/blob/main/Homeworks/HW2/screenshot/rotateAxis.gif)  
 Use `A`/`D` keys to adjust the airplane's orbit orientation.
 
+#### Use Rainbow Color
+![Imgur](https://github.com/ChuEating1005/Intro-to-CG/blob/main/Homeworks/HW2/screenshot/rainbow.gif)  
+Press `R` to toggle/un-toggle airplane rainbow color effect.
+
 #### Helicopter Mode
 ![](https://github.com/ChuEating1005/Intro-to-CG/blob/main/Homeworks/HW2/screenshot/helicopter.gif)  
 Press `H` to activate/deactivate helicopter transformation.
@@ -26,12 +30,6 @@ Press `H` to activate/deactivate helicopter transformation.
 #### Squeeze 
 ![](https://github.com/ChuEating1005/Intro-to-CG/blob/main/Homeworks/HW2/screenshot/squeeze.gif)  
 Press `S` to toggle/un-toggle earth squeeze effect.
-
-#### Rainbow 
-![Imgur](https://github.com/ChuEating1005/Intro-to-CG/blob/main/Homeworks/HW2/screenshot/rainbow.gif)  
-Press `R` to toggle/un-toggle airplane rainbow color effect.
-
-
 
 ## Technical Details
 - [Vertex shaders](./src/shaders/vertexShader.vert) and [Fragment shaders](./src/shaders/fragmentShader.frag) for rendering
