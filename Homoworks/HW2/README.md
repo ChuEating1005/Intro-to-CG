@@ -1,5 +1,4 @@
-# ICG 2024 HW2 - Earth and Airplane
-
+# Homework 2 - Travel the world
 A 3D graphics program demonstrating various visual effects using OpenGL. The program features an earth model with a rotating airplane in orbit.
 
 ## Basic Controls
