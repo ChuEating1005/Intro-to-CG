@@ -12,35 +12,35 @@ A 3D graphics program demonstrating various visual effects using OpenGL. The pro
 
 ### Airplane 
 #### Normal
-![Normal](screenshot/normal.gif) 
+![Normal](./screenshot/normal.gif) 
 
 Default view showing the earth and orbiting airplane.
 
 #### Rotate Axis 
-![Rotate axis](screenshot/rotateAxis.gif) 
+![Rotate axis](./screenshot/rotateAxis.gif) 
 
 Use `A`/`D` keys to adjust the airplane's orbit orientation.
 
 #### Helicopter Mode
-![Helicopter mode](screenshot/helicopter.gif) 
+![Helicopter mode](./screenshot/helicopter.gif) 
 
 Press `H` to activate/deactivate helicopter transformation.
 
 ### Earth
 #### Squeeze 
-![Squeeze mode](screenshot/squeeze.gif)
+![Squeeze mode](./screenshot/squeeze.gif)
 
 Press `S` to toggle/un-toggle earth squeeze effect.
 
 #### Rainbow 
-![Rainbow mode](screenshot/rainbow.gif)
+![Rainbow mode](./screenshot/rainbow.gif)
 
 Press `R` to toggle/un-toggle airplane rainbow color effect.
 
 
 
 ## Technical Details
-- [Vertex shaders](src/shader/vertex.glsl) and [Fragment shaders](src/shader/fragment.glsl) for rendering
+- [Vertex shaders](./src/shader/vertexShader.vert) and [Fragment shaders](./src/shader/fragmentShader.frag) for rendering
 - Texture mapping for earth and airplane
 - Matrix transformations for object positioning and rotation
 - Custom effects including squeeze and rainbow color transitions using vertex and fragment shaders
