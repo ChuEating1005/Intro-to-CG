@@ -4,7 +4,7 @@
 
 # Homework
 
-|   Homework  | Topic                                | 
-|:----------:|:-------------------------------------:|
-| HW 1       | Basic OpenGL API & Transformation     | 
-| HW 2       | OpenGL Shader & GLSL                  | 
+|          Homework           |                 Topic                 | 
+|:---------------------------:|:-------------------------------------:|
+| HW 1                        | Basic OpenGL API & Transformation     | 
+| [HW 2](Homeworks/HW2)       | OpenGL Shader & GLSL                  | 
