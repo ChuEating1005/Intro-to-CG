@@ -156,7 +156,6 @@ int main() {
         // Set up earth model matrix
         earthModel = glm::scale(earthModel, glm::vec3(10.0f));  // Scale 10x
         earthModel = glm::rotate(earthModel, glm::radians(rotateEarthDegree), glm::vec3(0.0f, 1.0f, 0.0f));  // Rotate around Y axis
-        earthModel = glm::rotate(earthModel, glm::radians(180.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
         // Draw the earth
         drawModel("earth", earthModel, view, projection, 1.0f, 1.0f, 1.0f);
@@ -372,6 +371,13 @@ unsigned int loadTexture(const string &filename) {
     unsigned char *data = stbi_load(filename.c_str(), &width, &height, &nrChannels, 0);
     
     if (data) {
+        // Flip the image vertically
+        for (int i = 0; i < height / 2; i++) {
+            for (int j = 0; j < width * nrChannels; j++) {
+                std::swap(data[i * width * nrChannels + j], data[(height - i - 1) * width * nrChannels + j]);
+            }
+        }
+
         GLenum format;
         if (nrChannels == 1)
             format = GL_RED;

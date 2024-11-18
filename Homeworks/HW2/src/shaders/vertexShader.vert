@@ -15,10 +15,8 @@ void main()
 {
     // Adjust the vertex position to create a squeeze effect
     vec3 squeezedPos = aPos;
-    float y = squeezedPos.y;
-    float z = squeezedPos.z;
-    squeezedPos.y += z * sin(squeezeFactor) / 2;
-    squeezedPos.z += y * sin(squeezeFactor) / 2;
+    squeezedPos.y += squeezedPos.z * sin(squeezeFactor) / 2;
+    squeezedPos.z += squeezedPos.y * sin(squeezeFactor) / 2;
 
     // Set gl_Position with the adjusted vertex position
     gl_Position = projection * view * model * vec4(squeezedPos, 1.0);
