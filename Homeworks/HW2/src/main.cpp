@@ -126,31 +126,8 @@ int main() {
         float orbitZ = 27.0f * cos(glm::radians(rotateAirplaneDegree));
         airplaneModel = glm::translate(airplaneModel, glm::vec3(0.0f, orbitY, orbitZ));
 
-        // Rotate around X axis for airplane rotation (controlled by Q/E keys)
+        // Rotate around X axis for airplane rotation (controlled by rotateAirplaneSpeed)
         airplaneModel = glm::rotate(airplaneModel, glm::radians(rotateAirplaneDegree - 90), glm::vec3(-1.0f, 0.0f, 0.0f));
-
-
-        // Update rainbow color if in rainbow mode
-        if (useRainbowColor) {
-            float hue = fmod(glfwGetTime() * 72.0f, 360.0f);  // 72 degrees per second
-            float saturation = 1.0f;
-            float value = 1.0f;
-            
-            // Convert HSV to RGB
-            float c = value * saturation;
-            float x = c * (1 - abs(fmod(hue / 60.0f, 2.0f) - 1));
-            float m = value - c;
-            
-            glm::vec3 rgb;
-            if (hue < 60) rgb = glm::vec3(c, x, 0);
-            else if (hue < 120) rgb = glm::vec3(x, c, 0);
-            else if (hue < 180) rgb = glm::vec3(0, c, x);
-            else if (hue < 240) rgb = glm::vec3(0, x, c);
-            else if (hue < 300) rgb = glm::vec3(x, 0, c);
-            else rgb = glm::vec3(c, 0, x);
-            
-            rainbowColor = rgb + glm::vec3(m);
-        }
 
         // TODO#6-2: Render Earth
         // Set up earth model matrix
