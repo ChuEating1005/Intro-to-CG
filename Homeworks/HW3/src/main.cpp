@@ -26,7 +26,6 @@ struct light_t{
     glm::vec3 ambient;
     glm::vec3 diffuse;
     glm::vec3 specular;
-    glm::vec3 color;
 };
 
 struct model_t{
@@ -86,14 +85,13 @@ void camera_setup(){
 
 void light_setup(){
     light.position = glm::vec3(0.0, 1000.0, 0.0);
-    light.ambient = glm::vec3(0.7);
+    light.ambient = glm::vec3(0.6);
     light.diffuse = glm::vec3(1.0);
     light.specular = glm::vec3(1.5);
-    light.color = glm::vec3(1.0);
 }
 
 void material_setup(){
-    material.ambient = glm::vec3(0.2);
+    material.ambient = glm::vec3(1.0);
     material.diffuse = glm::vec3(1.0);
     material.specular = glm::vec3(0.7);
     material.gloss = 10.5;
@@ -276,19 +274,22 @@ void render(){
     shaderPrograms[shaderProgramIndex]->set_uniform_value("view", view);
     shaderPrograms[shaderProgramIndex]->set_uniform_value("projection", projection);
     
+    glm::vec3 eye = glm::vec3(cameraModel[3]);
     // Set uniform value for Blin-Phong shader and Gouraud shader
     if (shaderProgramIndex == 1 || shaderProgramIndex == 2) {
         shaderPrograms[shaderProgramIndex]->set_uniform_value("lightPos", light.position);
-        shaderPrograms[shaderProgramIndex]->set_uniform_value("lightColor", light.color);
+        shaderPrograms[shaderProgramIndex]->set_uniform_value("ambientColor", material.ambient);
         shaderPrograms[shaderProgramIndex]->set_uniform_value("ambientLight", light.ambient);
+        shaderPrograms[shaderProgramIndex]->set_uniform_value("diffuseColor", material.diffuse);
         shaderPrograms[shaderProgramIndex]->set_uniform_value("diffuseLight", light.diffuse);
+        shaderPrograms[shaderProgramIndex]->set_uniform_value("specularColor", material.specular);
         shaderPrograms[shaderProgramIndex]->set_uniform_value("specularLight", light.specular);
-        shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", camera.position);
+        shaderPrograms[shaderProgramIndex]->set_uniform_value("gloss", material.gloss);
+        shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", eye);
     }
     else if (shaderProgramIndex == 3) {
         shaderPrograms[shaderProgramIndex]->set_uniform_value("lightPos", light.position);
-        shaderPrograms[shaderProgramIndex]->set_uniform_value("lightColor", light.color);
-        shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", camera.position);
+        shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", eye);
 
         // Bind skybox texture
         glActiveTexture(GL_TEXTURE1);
@@ -296,7 +297,7 @@ void render(){
         shaderPrograms[shaderProgramIndex]->set_uniform_value("skybox", 1);
     }
     else if (shaderProgramIndex == 4 || shaderProgramIndex == 5) {
-        shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", camera.position);
+        shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", eye);
          // Bind skybox texture
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);

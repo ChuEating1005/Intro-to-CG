@@ -8,7 +8,6 @@ in vec3 Reflection;
 out vec4 FragColor;
 
 uniform vec3 lightPos;
-uniform vec3 lightColor;
 uniform sampler2D ourTexture;
 uniform samplerCube skybox;
 
@@ -30,7 +29,7 @@ void main()
     vec3 reflectColor = vec3(texture(skybox, Reflection));
     
     // Mix the colors using the metallic ratio (alpha)
-    float alpha = 0.6; // Adjust this value to control metallicness
+    float alpha = 0.4; // Adjust this value to control metallicness
     vec3 finalColor = alpha * B * modelColor.rgb + (1.0 - alpha) * reflectColor;
     
     // Output final color

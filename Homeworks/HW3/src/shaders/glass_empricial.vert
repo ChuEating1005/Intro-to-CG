@@ -18,6 +18,18 @@ uniform vec3 cameraPos;
 const float AIR_COEFF = 1.0;
 const float GLASS_COEFF = 1.52;
 
+vec3 calculateReflection(vec3 I, vec3 N) {
+    return I - 2.0 * dot(I, N) * N;
+}
+
+vec3 calculateRefraction(vec3 I, vec3 N, float eta) {
+    float cosI = dot(-I, N);
+    float sinT2 = eta * eta * (1.0 - cosI * cosI);
+    if (sinT2 > 1.0) return vec3(0.0); // Total internal reflection
+    float cosT = sqrt(1.0 - sinT2);
+    return eta * I + (eta * cosI - cosT) * N;
+}
+
 void main()
 {
     // Transform position and normal
@@ -28,8 +40,8 @@ void main()
     vec3 viewDir = normalize(FragPos - cameraPos);
     
     // Calculate reflection and refraction vectors
-    Reflection = reflect(viewDir, Normal);
-    Refraction = refract(viewDir, Normal, AIR_COEFF/GLASS_COEFF);
+    Reflection = calculateReflection(viewDir, Normal);
+    Refraction = calculateRefraction(viewDir, Normal, AIR_COEFF/GLASS_COEFF);
     
     // Pass texture coordinates
     TexCoord = aTexCoord;
