@@ -10,3 +10,4 @@ A 30-second 3D animation project built using OpenGL. Leveraged free Minecraft-st
 |:---------------------------:|:-------------------------------------:|
 | HW 1                        | Basic OpenGL API & Transformation     | 
 | [HW 2](Homeworks/HW2)       | OpenGL Shader & GLSL                  | 
+| [HW 3](Homeworks/HW3)       | Shading & Cubemaps                    |
